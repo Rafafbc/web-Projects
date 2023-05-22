@@ -41,4 +41,8 @@ botaoAlterarTema.addEventListener("click", () => {
         // passo 5 - trocar a imagem do botão de alterar tema pra lua
         imagemBotaoTrocaDeTema.setAttribute("src", "./src/imagens/moon.png")    // altera o atributo 'src' da tag 'img'
     }
+
+
+
+    
 });
