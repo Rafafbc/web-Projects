@@ -86,7 +86,7 @@
 
         main .analyse > div {
             border-style: dashed;
-            border-color:rgb(123, 2, 68);
+            border-color:rgb(123, 115, 2);
             border-width: 2px;
         }
 
@@ -95,7 +95,8 @@
             border-color:rgb(123, 2, 2); 
             border-width: 2px;
         }
-
+        
+        /*
         main .analyse .progress svg{
             border-style: dashed; 
             border-color:rgb(49, 175, 10); 
@@ -103,6 +104,18 @@
         }
 
         main .analyse .progress .percentage{
+            border-style: dashed; 
+            border-color:rgb(0, 0, 0); 
+            border-width: 2px;
+        }
+        */
+        main .analyse span{
+            border-style: dashed; 
+            border-color:rgb(49, 175, 10); 
+            border-width: 2px;
+        }
+
+        main .analyse span .material-symbols-outlined {
             border-style: dashed; 
             border-color:rgb(0, 0, 0); 
             border-width: 2px;
@@ -160,7 +173,7 @@
             border-color:rgb(165, 146, 4);
             border-width: 2px;
         }
-        div .user-profile .logo:not(.user-profile img) {
+        div .user-profile .logo {
             border-style: dashed;
             border-color:rgb(7, 165, 4);
             border-width: 2px;
@@ -170,7 +183,8 @@
             border-color:rgb(20, 4, 165);
             border-width: 2px;
         }
-    </style> -->
+    </style>
+    -->
 </head>
 <body>
     <div class="container-1">
@@ -178,7 +192,7 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <img src="images/logo.png">
+                    <img src="images/lince-logo_S-fundo.png">
                     <h2>Lince</h2>
                 </div>
 
@@ -268,14 +282,23 @@
             <h1>Análises</h1>
             <!-- Análises -->
             <div class="analyse">
-                <div class="sales">
+                <div class="pressure">
                     <div class="status">
                         <div class="info">
-                            <h3>Vendas totais</h3>
-                            <h1>$65,240</h1>
+                            <h3>Pressão do ar</h3>
+                            <!--<h1>$65,240</h1>-->
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
                         </div>
                         
-                        <div class="progress">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                air
+                            </span>
+                            <!--
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
@@ -283,18 +306,27 @@
                             <div class="percentage">
                                 <p>+81%</p>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
 
-                <div class="visits">
+                <div class="temp">
                     <div class="status">
                         <div class="info">
-                            <h3>Visitas ao Site</h3>
-                            <h1>30,430</h1>
+                            <h3>Temperatura</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
                         </div>
                         
-                        <div class="progress">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                thermostat
+                            </span>
+                            <!--
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
@@ -302,18 +334,27 @@
                             <div class="percentage">
                                 <p>-48%</p>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
 
-                <div class="searches">
+                <div class="humidity">
                     <div class="status">
                         <div class="info">
-                            <h3>Pesquisas</h3>
-                            <h1>14,147</h1>
+                            <h3>Umidade</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
                         </div>
                         
-                        <div class="progress">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span>
+                            <!--
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
@@ -321,14 +362,47 @@
                             <div class="percentage">
                                 <p>+21%</p>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
+                
+                <div></div>
+
+                <div class="lux">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Intensidade Luminosa</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                brightness_6
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div></div>
             </div>
 
             <!-- Novos Usuários -->
             <div class="new-users">
-            <h2>Novos Usuários</h2>
+            <h2>Gráfico</h2>
             <div class="user-list">
                 <div class="user">
                     <img src="images/profile-2.jpg">
@@ -358,7 +432,7 @@
             
             <!-- Tabela de Pedidos Recentes -->
             <div class="recent-orders">
-                <h2>Pedidos Recentes</h2>
+                <h2>Últimos alertas de anomalia</h2>
                 <table>
                     <thead>
                         <tr>
@@ -407,9 +481,9 @@
 
             <div class="user-profile">
                 <div class="logo">
-                    <img src="images/logo.png">
-                    <h2>AsmrProg</h2>
-                    <p>Fullstack Web Developer</p>
+                    <img src="images/lince-logo_S-fundo.png">
+                    <h2>LINCE</h2>
+                    <p>Liga De Inteligência Neuro-Computacional Na Engenharia</p>
                 </div>
             </div>
 
