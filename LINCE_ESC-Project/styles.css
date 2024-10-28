@@ -170,7 +170,7 @@ aside .sidebar {
     background-color: var(--color-background2);
     box-shadow: var(--box-shadow);
     border-radius: 13px;
-    height: 88vh;
+    height: 84vh;
     position: relative;
     top: 10px;
     transition: all 0.3s ease;
@@ -444,6 +444,10 @@ main .new-users .user-list {
 }
 main .new-users .user-list:hover {
     box-shadow: none;
+}
+/* Verificar depois se retira */
+main .new-users .user-list > div {
+    display: none;
 }
 
 main .new-users .user {
