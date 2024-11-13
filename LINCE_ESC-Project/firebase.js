@@ -1,4 +1,4 @@
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
 // Criação de uma função anônima para que as configurações da Firebase não sejam expostas
@@ -21,5 +21,17 @@ const app = (function () {
 
 // Inicializa o Realtime Database
 const database = getDatabase(app);
+
+// Verificação da conexão com o Realtime Database
+const connectedRef = ref(database, ".info/connected");
+onValue(connectedRef, (snapshot) => {
+    const connected = snapshot.val();
+    if (connected) {
+        console.log("Conectado ao Realtime Database com sucesso!");
+        alert("Conexão estabelecida com o Realtime Database!");
+    } else {
+        console.log("Desconectado do Realtime Database.");
+    }
+});
 
 export { database };

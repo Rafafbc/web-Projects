@@ -1,6 +1,9 @@
 import { getDataArrays } from "./fetchData.js";
 import Chart from 'chart.js/auto';
 
+const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
+console.log("Teste de coleta de dados no plotChart: " + temperaturaDado);
+
 // Função para plotar o gráfico
 function plotChart() {
     const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
@@ -58,8 +61,13 @@ function plotChart() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", plotChart())
+// document.addEventListener("DOMContentLoaded", plotChart);
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData().then(() => {
+        plotChart();
+    });
+});
 
 // Expondo a função "fetchData" ao escopo global
 window.plotChart = plotChart;
-window.myChart = myChart;
+//window.myChart = myChart;

@@ -12,10 +12,18 @@ var timestamps = [];
 function fetchData() {
     const dataRef = ref(database, "kumagae");
 
-    get(dataRef).then((snapshot) => {
+    // Retorna uma Promise para garantir que os dados foram carregados
+    return get(dataRef).then((snapshot) => {
         if (snapshot.exists()) {
             const data = snapshot.val();
             let outputHtml = "";
+
+            // Limpa os arrays para evitar dados duplicados
+            pressoes = [];
+            luxs = [];
+            temperaturas = [];
+            umidades = [];
+            timestamps = [];
 
             // Extraindo e ordenando os IDs
             const keys = Object.keys(data).sort((a, b) => {
@@ -30,7 +38,7 @@ function fetchData() {
                 const childData = data[key];
             
                 // Exibe o ID do nó principal
-                outputHtml += `<h3>Nó principal ID: ${key}</h3>`;
+                // // outputHtml += `<h3>Nó principal ID: ${key}</h3>`;
             
                 // Verifica se o nó principal possui subnós
                 if (typeof childData === 'object') {
@@ -56,17 +64,17 @@ function fetchData() {
                                 timestamps.push(timestamp);
 
                                 // Exibe os dados no HTML
-                                outputHtml += `
-                                    <div>
-                                        <h4>Subnó ID: ${subKey}</h4>
-                                        <p>Temperatura: ${temperatura}</p>
-                                        <p>Umidade: ${umidade}</p>
-                                        <p>Pressão: ${pressao}</p>
-                                        <p>Luz: ${lux}</p>
-                                        <p>Timestamp: ${timestamp}</p>
-                                    </div>
-                                    <hr>
-                                `;
+                                // // outputHtml += `
+                                // //     <div>
+                                // //         <h4>Subnó ID: ${subKey}</h4>
+                                // //         <p>Temperatura: ${temperatura}</p>
+                                // //         <p>Umidade: ${umidade}</p>
+                                // //         <p>Pressão: ${pressao}</p>
+                                // //         <p>Luz: ${lux}</p>
+                                // //         <p>Timestamp: ${timestamp}</p>
+                                // //     </div>
+                                // //     <hr>
+                                // // `;
                             } else {
                                 console.log(`Subnó ${subKey} não possui o campo "dados".`, parsedData);
                             }
@@ -82,7 +90,7 @@ function fetchData() {
             // Exibe o conteúdo na página
             document.getElementById("data-output").innerHTML = outputHtml;
 
-            // Agora você pode usar os arrays como entrada para Chart.js
+            // Exibe o conteúdo no Console
             console.log("Temperaturas:", temperaturas);
             console.log("Umidades:", umidades);
             console.log("Pressões:", pressoes);
