@@ -5,22 +5,26 @@
     <!-- Firebase App -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
-    <!-- Link do Chart.js usando um CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Game Database</title>
 </head>
 <body>
     <button onclick="fetchData()">Buscar Dados</button>
     <button onclick="newGame(gameData)">Criar Novo Jogo</button>
-
+    
     <div id="data-output"></div>
-    
+    <hr>
+
+    <button onclick="getDataArrays()">Pegar os dados</button>
     <button onclick="plotChart()">Criar Gráficos</button>
+
     <canvas id="my-Chart" width="400" height="200"></canvas>
+    <hr>
 
+    <button onclick="teste1()">Teste 1</button>
+    <button onclick="teste2()">Teste 2</button>
     
-
-    
+    <!-- Link do Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Arquivos JavaScript para coleta de dados -->
     <script type="module" src="firebase.js"></script>

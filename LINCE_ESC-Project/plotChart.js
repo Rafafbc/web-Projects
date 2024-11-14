@@ -1,16 +1,34 @@
-import { getDataArrays } from "./fetchData.js";
-import Chart from 'chart.js/auto';
+// import { getDataArrays } from "./fetchData.js";
+// import { Chart } from 'chart.js/auto';
 
-const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
-console.log("Teste de coleta de dados no plotChart: " + temperaturaDado);
+function teste1() {
+    console.log("testando 1 ...")
+}
 
 // Função para plotar o gráfico
 function plotChart() {
-    const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
+    //const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
+    //const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = DataArrays;
+    console.log("plotChart!!!!!");
 
-    const ctx = document.getElementById('my-Chart').getContext('2d');
+    const data = getDataArrays();
+    console.log(data)
+
+    const temperaturaDado = data.temperaturas;
+    const umidadeDado = data.umidades;
+    const pressaoDado = data.pressoes;
+    const luxDado = data.luxs;
+    const timestamps = data.timestamps;
+
+    console.log(temperaturaDado);
+    console.log(umidadeDado);
+    console.log(pressaoDado);
+    console.log(luxDado);
+    console.log(timestamps);
+
+    const ctx = document.querySelector('#my-Chart');
     
-    const myChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'line',
         data: {
             labels: timestamps,
@@ -63,11 +81,36 @@ function plotChart() {
 
 // document.addEventListener("DOMContentLoaded", plotChart);
 document.addEventListener("DOMContentLoaded", () => {
-    fetchData().then(() => {
-        plotChart();
-    });
+    fetchData()
+        .then(() => {
+            getDataArrays();
+        });
 });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     fetchData()
+//         .then(() => {
+//             const data = getDataArrays();
+//             console.log("Dados para o gráfico:", data);  // Verifique os dados
+//             const temperaturaDado = data.temperaturas;
+//             const umidadeDado = data.umidades;
+//             const pressaoDado = data.pressoes;
+//             const luxDado = data.luxs;
+//             const timestamps = data.timestamps;
+
+//             //plotChart(temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps);
+//         })
+//         .catch((error) => {
+//             console.error("Ocorreu um erro:", error);
+//         });
+// });
+
+function teste2() {
+    console.log("testando 2 ...")
+}
 
 // Expondo a função "fetchData" ao escopo global
 window.plotChart = plotChart;
+window.teste1 = teste1;
+window.teste2 = teste2;
 //window.myChart = myChart;

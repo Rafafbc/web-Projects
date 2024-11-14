@@ -56,7 +56,7 @@ function fetchData() {
                                 const [pressao, lux, temperatura, umidade] = parsedData.dados.split(",");
                                 const timestamp = parsedData.timestamp || "Sem timestamp";
                                 
-                                // Adiciona os vlaores aos arrays correspondentes
+                                // Adiciona os valores aos arrays correspondentes
                                 pressoes.push(parseFloat(pressao));
                                 luxs.push(parseFloat(lux));
                                 temperaturas.push(parseFloat(temperatura));
@@ -107,6 +107,7 @@ function fetchData() {
 
 // Função para obter os dados
 function getDataArrays() {
+    console.log("DADOS COLETADOS")
     return {
         pressoes,
         luxs,
