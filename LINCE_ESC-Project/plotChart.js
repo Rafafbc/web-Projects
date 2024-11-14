@@ -36,26 +36,26 @@ function plotChart() {
                 {
                     label: 'Temperatura',
                     data: temperaturaDado,
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(210, 72, 72, 1)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 },
                 {
                     label: 'Umidade',
                     data: umidadeDado,
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderColor: 'rgb(34, 116, 156, 1)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 },
                 {
                     label: 'Pressão',
                     data: pressaoDado,
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(78, 212, 78, 1)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 },
                 {
                     label: 'Luz',
                     data: luxDado,
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgb(210, 210, 0, 1)',
+                    backgroundColor: 'rgb(210, 210, 0, 0.2)',
                 }
             ]
         },

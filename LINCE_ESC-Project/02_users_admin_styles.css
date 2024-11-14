@@ -1,0 +1,903 @@
+/* Import da fonte Poppins da API do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variáveis de estilo associados ao elemento raiz do documento, no caso o <html>, mas com relevância de declaração maior. */
+:root {
+    --color-primary: rgb(34, 116, 156);
+    /*--color-primary: rgb(72, 72, 194);*/
+    --color-danger: rgb(210, 72, 72);
+    --color-warning: rgb(210, 210, 0); 
+    --color-success: rgb(72, 210, 72);
+
+    /* Variáveis para o Tema Claro */
+    --color-text: rgb(0, 0, 0);
+    --color-background: rgb(221, 217, 217);
+    --color-background2: white;
+    --color-info: rgb(88, 88, 88);
+    --color-highlight: rgba(17, 16, 16, 0.18);
+
+    --card-border-radius: 36px;
+    --border-radius1: 14px;
+    --border-radius2: 8px;
+
+    --card-padding: 30px;
+    --padding1: 26px;
+
+    --box-shadow: 0px 36px 54px var(--color-highlight);
+}
+.dark-mode-variables {
+    /* Variáveis para o Tema Escuro */
+    --color-text: rgb(255, 255, 255);
+    --color-background: rgb(32, 32, 36);
+    --color-background2: rgb(44, 44, 49);
+    --color-info: rgb(184, 184, 184);
+    --color-highlight: #000000;
+
+    --box-shadow: 0px 36px 54px rgba(0, 0, 0, 0.18);
+}
+
+/* --- Estilização de elementos do documento html --- */
+* {     /* Estilização aplicada a todos os elementos do documento de uma vez, usado para remover a estilização padrão do navegador*/
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    width: 100vw;   /* - Mudar o 'vw' para algo melhor! - */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    user-select: none;
+    overflow-x: none;     /* previne o scrolling horizontal */
+    overflow-y: auto;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+a {
+    color: black;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 36px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+small {
+    font-weight: 500;
+    font-size: 8px;
+}
+
+p {
+    color: var(--color-text);
+}
+
+
+/* --- Estilização de classes --- */
+.text-muted {
+    color: var(--color-darkSide-info);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container-1 {
+    display: grid;
+    justify-content: center;
+    width: 99%;
+    height: 100%;
+    margin: 0px 0px;
+    gap: 32px;
+    /* grid-template-columns: 192px auto 368px;    /* Define o layout do Grid Container da página, com 3 colunas, sendo que a 2° coluna tem uma largura que se ajusta dinamicamente ao espaço disponível */
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /* grid-template-columns: 192px minmax(auto, 1fr) auto; */
+    grid-template-columns: 192px calc(1400px - 442px) 250px;
+}
+
+/* --- Estilização da Seção da Sidebar --- */
+aside {
+    height: 100vh;
+    width: min-content;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+aside .toggle h2 {
+    font-size: 30px;
+}
+
+aside .toggle .logo {
+    display: flex;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+aside .toggle .logo img {
+    width: 74px;
+    height: 74px;
+}
+
+aside .toggle .close {
+    padding-right: 12px;
+    display: none;
+}
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background2);
+    box-shadow: var(--box-shadow);
+    border-radius: 13px;
+    height: 84vh;
+    position: relative;
+    top: 10px;
+    transition: all 0.3s ease;
+}
+aside .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .sidebar a:not(.active):not(a:hover):not(a:last-child) {
+    display: flex;
+    align-items: center;
+    color: var(--color-info);
+    height: 59.2px;
+    gap: 5px;
+    position: relative;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span {
+    font-size: 25.6px;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-info);
+    height: 53px;
+    gap: 5px;
+    position: absolute;
+    margin: 0 16px;
+    padding: 0 55px;
+    transition: all 0.5s ease;
+    bottom: 2px;
+}
+
+aside .sidebar a.active{
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+    margin: 0 16px;
+    padding: 0;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    right: 16px;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+/*
+aside .sidebar a.active::after{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}*/
+aside .sidebar a:hover:not(a.active):not(a:last-child) {
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 90%;
+    gap: 5px;
+    position: relative;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    left: 8px;
+}
+aside .sidebar a:last-child:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55px;
+    gap: 5px;
+    position: absolute;
+    margin: 0 0 0 50%;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    bottom: 5px;
+}
+
+aside .sidebar .tickets-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-background2);
+    font-size: 11px;
+    border-radius: var(--border-radius2);
+}
+
+/* --- Estilização da Seção do Conteúdo Principal --- */
+main {
+    margin-top: 22.4px;
+}
+
+/* Estilização das Análises */
+main .analyse {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+/*
+@media (max-width: 1200px) {
+    main .analyse {
+        grid-template-columns: repeat(1, 1fr);  /* Uso de Media Queries para ajustar a quantidade de colunas na Main para 1 ao invés de 3, quando em tamanhos de telas de largura menores
+    }
+}
+*/
+
+main .analyse > div {
+    background-color: var(--color-background2);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin: 16px 8px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+main .analyse > div:hover:not(:nth-last-child(3)):not(:last-child) {
+    box-shadow: none;
+}
+
+main .analyse > div:nth-last-child(3),
+main .analyse > div:last-child {
+    background-color: var(--color-background);
+}
+
+main .analyse > div .status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+main .analyse .info {
+    width: 100%;
+}
+
+main .analyse h3 {
+    font-size: 16px;
+    margin-left: 9.6px;
+}
+
+main .analyse .analyse_btn {
+    background-color: transparent;
+    border: solid var(--color-text);
+    border-radius: var(--border-radius2);
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+    bottom: 2px;
+}
+main .analyse .analyse_btn span {
+    color: var(--color-text);
+    font-size: 40px;
+}
+
+main .analyse .icon {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+/*
+main .analyse svg {
+    width: 112px;
+    height: 112px;
+}
+main .analyse svg circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+*/
+main .analyse span {
+    width: 100%;
+    height: 100%;
+    font-size: 88px;
+}
+main .analyse span .material-symbols-outlined {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+/*
+main .analyse .pressure svg circle {
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+*/
+main .analyse .pressure .icon span {
+    color: var(--color-success);
+}
+
+/*
+main .analyse .temp svg circle {
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+*/
+main .analyse .temp .icon span {
+    color: var(--color-danger);
+}
+
+/*
+main .analyse .humidity svg circle {
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+*/
+main .analyse .humidity .icon span {
+    color: var(--color-primary);
+}
+
+/*
+main .analyse .lux svg circle {
+    stroke: var(--color-warning);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+*/
+main .analyse .lux .icon span {
+    color: var(--color-warning);
+}
+
+main .analyse .icon .percentage {
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilização dos Novos Usuários */
+main .new-users {
+    margin-top: 20.8px;
+}
+
+main .new-users .user-list {
+    background-color: var(--color-background2);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 16px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 22.4px;
+}
+main .new-users .user-list:hover {
+    box-shadow: none;
+}
+/* Verificar depois se retira 
+main .new-users .user-list > div {
+    display: none;
+}
+*/
+main .new-users .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .new-users .user-list .user img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 6.4px;
+    border-radius: 50%;
+}
+
+main .new-users .user-list .user .btn-detalhes_usuario {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+main .new-users .user-list .user .btn-detalhes_usuario:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+/* Estilização da Tabela de Pedidos Recentes */
+main .users-details {
+    margin-top: 20.8px;
+}
+
+main .users-details h2 {
+    margin-bottom: 12.8px;
+}
+
+main .users-details #detalhes {
+    background-color: var(--color-background2);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+main .users-details table:hover {
+    box-shadow: none;
+}
+
+main table th {
+    display: none;
+}
+
+main table tbody td{
+    display: none;
+    height: 44.8px;
+    border-bottom: 1px solid var(--info);
+    color: var(--color-info);
+}
+
+main table tbody tr:last-child td {
+    border: none;
+}
+
+main .users-details a {
+    text-align: center;
+    display: block;
+    margin: 16px auto;
+    color: var(--color-primary);
+}
+
+/* --- Estilização da Seção da Direita --- */
+.right-section {
+    margin-top: 22.4px;
+    overflow: auto;
+}
+
+.right-section .nav {
+    display: flex;
+    justify-content: end;
+    gap: 18px;
+    width: 100%;
+}
+
+.right-section .nav button {
+    display: none;
+}
+
+.right-section .nav .dark-mode {
+    background-color: var(--color-info) transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25.6px;
+    width: 67.2px;
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--color-primary);
+    border-width: 2px;
+    border-radius: var(--border-radius2);
+}
+
+.right-section .dark-mode span {
+    font-size: 19.2px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.right-section .dark-mode span.active {
+    background-color: var(--color-primary);
+    color: var(--color-background2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.right-section .nav .profile {
+    display: flex;
+    gap: 32px;
+    text-align: right;
+}
+
+.right-section .nav .profile .profile-photo {
+    height: 44.8px;
+    width: 44.8px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.right-section .user-profile {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 16px;
+    background-color: var(--color-background2);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.right-section .user-profile:hover {
+    box-shadow: none;
+}
+
+.right-section .user-profile .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-section .user-profile img {
+    width: 176px;
+    height: auto;
+    margin-bottom: 12.8px;
+    margin: 0 10px;
+    filter:drop-shadow(12px 12px 8px var(--color-highlight))
+    /* border-radius: 50%; */
+}
+
+.right-section .user-profile h2 {
+    margin-bottom: 0px;
+}
+
+.right-section .reminders {
+    margin-top: 32px;
+}
+
+.right-section .reminders .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 12.8px;
+}
+
+.right-section .reminders .header span {
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-background2);
+    border-radius: 50%;
+}
+
+.right-section .reminders .notification {
+    background-color: var(--color-background2);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 11.2px;
+    padding: 15px 22.4px;
+    border-radius: var(--border-radius1);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.right-section .reminders .notification:hover {
+    box-shadow: none;
+}
+
+.right-section .reminders .notification .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.right-section .reminders .notification .icon {
+    padding: 9.6px;
+    color: var(--color-background2);
+    background-color: var(--color-success);
+    border-radius: 20%;
+    display: flex;
+}
+
+.right-section .reminders .notification.deactive .icon {
+    background-color: var(--color-danger);
+}
+
+.right-section .reminders .add-reminder {
+    background-color: var(--color-background2);
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.right-section .reminders .add-reminder:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background2);
+}
+
+.right-section .reminders .add-reminder div {
+    display: flex;
+    align-items: center;
+    gap: 9.6px;
+}
+
+/* --- Uso de Media Queries para ajustar os elementos --- */
+@media screen and (max-width: 1200px) {
+    .container-1{
+        width: 95%;
+        grid-template-columns: 3 1fr;
+    }
+
+    aside .logo h2 {
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 89.6px;
+    }
+
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 28.8px;
+        width: 89.6px;
+    }
+
+    main .analyse {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    main .new-users .user-list .user {
+        flex-basis: 40%;
+    }
+
+    main .users-details {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        margin: 32px 0 0 12.8px;
+    }
+
+    main .users-details table {
+        width: 83vw;
+    }
+    main .users-details table tbody tr td:last-child, main .users-details table tbody tr td:first-child{
+        display: none;
+    }
+    main .users-details table thead tr th:last-child, main .users-details table thead tr th:first-child{
+        display: none;
+    }
+
+    .right-section .user-profile img {
+        margin-bottom: 12.8px;
+        margin: 2px 23%;
+        /* border-radius: 50%; */
+    }
+    .right-section .user-profile p {
+        margin: 0 30px;
+        padding: -1px ;
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-1 {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0 var(--padding1);
+    }
+
+    aside {
+        position: fixed;
+        background-color: var(--color-background2);
+        width: 240px;
+        z-index: 3;
+        box-shadow: 16px 48px 64px var(--color-highlight);
+        height: 100vh;
+        left: -100%;
+        display: none;
+        animation: showMenu 0.4s ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+
+    aside .logo {
+        margin-left: 16px;
+    }
+
+    aside .logo h2 {
+        display: inline;
+    }
+
+    aside .sidebar h3 {
+        display: inline;
+    }
+
+    aside .sidebar a {
+        width: 100%;
+        height: 54.4px;
+    }
+
+    aside .sidebar a:last-child{
+        position: absolute;
+        bottom: 8px;
+    }
+
+    aside .toggle .close {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    aside .toggle .close:hover {
+        padding: 0 16px;
+        transition: all 0.6s ease;
+        color: var(--color-danger);
+    }
+
+    main{
+        margin-top: 128px;
+        padding: 0 16px;
+    }
+
+    main .new-users .user-list .user {
+        flex-basis: 45%;
+    }
+
+    main .users-details {
+        position: relative;
+        margin: 48px 0 0 0;
+        width: 100%;
+    }
+
+    main .users-details table {
+        width: 100%;
+        margin: 0;
+    }
+
+    .right-section {
+        width: 94%;
+        margin: 0 auto 64px;
+    }
+
+    .right-section .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-background2);
+        padding: 0 var(--padding1);
+        height: 73.6px;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 16px 16px var(--color-highlight);
+        margin: 0;
+    }
+
+    .right-section .nav .dark-mode {
+        width: 70.4px;
+        position: absolute;
+        left: 63%;
+    }
+
+    .right-section .profile .info {
+        display: none;
+    }
+
+    .right-section .nav button {
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--color-darkSide-background);
+        position: absolute;
+        left: 16px;
+    }
+
+    .right-section .nav button span {
+        font-size: 32px;
+    }
+
+    .right-section .user-profile .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right-section .user-profile img {
+        margin-bottom: 12.8px;
+        /* margin: 2px 100; */
+        filter:drop-shadow(12px 12px 8px var(--color-highlight));
+        /* border-radius: 50%; */
+    }
+    .right-section .user-profile p {
+        margin: 0 30px;
+        padding: 10px ;
+    }
+}

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link de referência usado para acessar e inserir Icones do Google Fonts à página HTML-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="01_home_styles.css">
+    <title>ESC - Dashboard</title>
+    <!--
+    <style>
+        /* Seção da Sidebar */
+        body {
+            border-style: dashed;
+            border-color:rgb(0, 0, 0);
+            border-width: 2px;
+        }
+
+        body .container-1 {
+            border-style: dashed;
+            border-color:rgb(255, 0, 0);
+            border-width: 2px;
+        }
+
+        aside {
+            border-style: dashed;
+            border-color:rgb(165, 146, 4);
+            border-width: 2px;
+        }
+        
+        aside .toggle{
+            border-style: dashed;
+            border-color:rgb(27, 207, 7);
+            border-width: 2px;
+        }
+
+        aside .toggle .logo{
+            border-style: dashed;
+            border-color:rgb(0, 4, 255);
+            border-width: 2px;
+        }
+
+        aside .toggle .close{
+            border-style: dashed;
+            border-color:rgb(0, 4, 255);
+            border-width: 2px;
+        }
+
+        .sidebar {
+            border-style: dashed;
+            border-color:rgb(2, 107, 123);
+            border-width: 2px;
+        }
+
+        .sidebar a {
+            border-style: dashed; 
+            border-color:rgb(123, 2, 2); 
+            border-width: 2px;
+        }
+
+        /* Seção do Conteúdo Principal */
+        main {
+            border-style: dashed;
+            border-color:rgb(165, 146, 4);
+            border-width: 2px;
+        }
+        
+        main h1{
+            border-style: dashed;
+            border-color:rgb(27, 207, 7);
+            border-width: 2px;
+        }
+
+        main h2{
+            border-style: dashed;
+            border-color:rgb(27, 207, 7);
+            border-width: 2px;
+        }
+
+        /* Análises */
+        main .analyse{
+            border-style: dashed;
+            border-color:rgb(0, 4, 255);
+            border-width: 2px;
+        }
+
+        main .analyse > div {
+            border-style: dashed;
+            border-color:rgb(123, 115, 2);
+            border-width: 2px;
+        }
+
+        main .analyse > div .status{
+            border-style: dashed; 
+            border-color:rgb(123, 2, 2); 
+            border-width: 2px;
+        }
+        
+        /*
+        main .analyse .progress svg{
+            border-style: dashed; 
+            border-color:rgb(49, 175, 10); 
+            border-width: 2px;
+        }
+
+        main .analyse .progress .percentage{
+            border-style: dashed; 
+            border-color:rgb(0, 0, 0); 
+            border-width: 2px;
+        }
+        */
+        main .analyse span{
+            border-style: dashed; 
+            border-color:rgb(49, 175, 10); 
+            border-width: 2px;
+        }
+
+        main .analyse span .material-symbols-outlined {
+            border-style: dashed; 
+            border-color:rgb(0, 0, 0); 
+            border-width: 2px;
+        }
+
+        /* Novos Usuários */
+        main .new-users{
+            border-style: dashed;
+            border-color:rgb(0, 4, 255);
+            border-width: 2px;
+        }
+
+        main .new-users > div {
+            border-style: dashed;
+            border-color:rgb(123, 2, 68);
+            border-width: 2px;
+        }
+
+        main .new-users .user{
+            border-style: dashed; 
+            border-color:rgb(2, 89, 123); 
+            border-width: 2px;
+        }
+
+        /* Seção da Direita */
+        div .right-section {
+            border-style: dashed;
+            border-color:rgb(165, 146, 4);
+            border-width: 2px;
+        }
+        
+        div .nav{
+            border-style: dashed;
+            border-color:rgb(27, 207, 7);
+            border-width: 2px;
+        }
+
+        div .nav .menu-btn{
+            border-style: dashed;
+            border-color:rgb(207, 7, 7);
+            border-width: 2px;
+        }
+        div .nav .dark-mode{
+            border-style: dashed;
+            border-color:rgb(34, 145, 15);
+            border-width: 20px;
+        }
+        div .nav .profile{
+            border-style: dashed;
+            border-color:rgb(7, 24, 207);
+            border-width: 2px;
+        }
+        div .user-profile {
+            border-style: dashed;
+            border-color:rgb(165, 146, 4);
+            border-width: 2px;
+        }
+        div .user-profile .logo {
+            border-style: dashed;
+            border-color:rgb(7, 165, 4);
+            border-width: 2px;
+        }
+        div .user-profile img{
+            border-style: dashed;
+            border-color:rgb(20, 4, 165);
+            border-width: 2px;
+        }
+    </style>
+    -->
+</head>
+<body>
+    <div class="container-1">
+        <!-- Seção da Sidebar -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/lince-logo_S-fundo.png">
+                    <h2>Lince</h2>
+                </div>
+
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined">
+                        <b>keyboard_double_arrow_left</b>
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+
+                <a href="02_users_admin.html">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>
+                    <h3>Usuários</h3>
+                </a>
+                
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        receipt_long
+                    </span>
+                    <h3>Histórico</h3>
+                </a>
+                
+                <a href="04_analyse.html">
+                    <span class="material-symbols-outlined">
+                        query_stats
+                    </span>
+                    <h3>Análises</h3>
+                </a>
+
+                <!--
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        local_activity
+                    </span>
+                    <h3>Bilhete</h3>
+                    <span class="tickets-count">30</span>
+                </a>
+                -->
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        inventory
+                    </span>
+                    <h3>Inventário</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        brightness_alert
+                    </span>
+                    <h3>Alertas</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                    <h3>Configurações</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    <h3>Login</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Seção do Conteúdo Principal -->
+        <main>
+            <h1>Dashboard</h1>
+            <!-- Análises -->
+            <div class="analyse">
+                <div class="pressure">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Pressão do ar</h3>
+                            <!--<h1>$65,240</h1>-->
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                air
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+81%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Temperatura</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                thermostat
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>-48%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="humidity">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Umidade</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div></div>
+
+                <div class="lux">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Intensidade Luminosa</h3>
+                            <button class="analyse_btn">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                brightness_6
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div></div>
+            </div>
+
+            <!-- Novos Usuários -->
+            <div class="new-users">
+            <h2>Gráfico</h2>
+            <div class="user-list">
+                <div class="user">
+                    <img src="images/profile-2.jpg">
+                    <h2>Jack</h2>
+                    <p>54 Min Ago</p>
+                </div>
+
+                <div class="user">
+                    <img src="images/profile-3.jpg">
+                    <h2>Amir</h2>
+                    <p>3 Hours Ago</p>
+                </div>
+
+                <div class="user">
+                    <img src="images/profile-4.jpg">
+                    <h2>Ember</h2>
+                    <p>6 Hours Ago</p>
+                </div>
+
+                <div class="user">
+                    <img src="images/plus.png">
+                    <h2>More</h2>
+                    <p>New User</p>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Tabela de Pedidos Recentes -->
+            <div class="recent-orders">
+                <h2>Últimos alertas de anomalia</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome do Curso</th>
+                            <th>Número do Curso</th>
+                            <th>Pagamento</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+                <a href="#">Mostrar Todos</a>
+            </div>
+        </main>
+
+        <!-- Seção da Direita -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-symbols-outlined">
+                        <b>menu</b>
+                    </span>
+                </button>
+
+                <div class="dark-mode">
+                    <span class="material-symbols-outlined active">
+                        light_mode
+                    </span>
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reza</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/Rafael.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/lince-logo_S-fundo.png">
+                    <h2>LINCE</h2>
+                    <p>Liga De Inteligência Neuro-Computacional Na Engenharia</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            volume_up
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            <b>more_vert</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            <b>more_vert</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-symbols-outlined">
+                            <b>add</b>
+                        </span>
+                        <h3>Add Reminders</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="orders.js"></script>
+    <script src="01_index.js"></script>
+</body>
+</html>
