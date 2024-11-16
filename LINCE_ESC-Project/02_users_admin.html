@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="02_users_admin_styles.css">
     <title>ESC - Dashboard</title>
+    <!--
+    <style>
+        #miguel-info {
+            border: 2px dashed red;
+        }
+        #miguel-info > div {
+            border: 2px dashed blue;
+        }
+
+        #carla-info {
+            border: 2px dashed red;
+        }
+        #carla-info > div {
+            border: 2px dashed blue;
+        }
+
+        #rafael-info {
+            border: 2px dashed red;
+        }
+        #rafael-info > div {
+            border: 2px dashed blue;
+        }
+    </style>
+    -->
 </head>
 <body>
     <div class="container-1">
@@ -139,7 +163,7 @@
             <!-- Detalhes de Usuário -->
             <div class="users-details">
                 <h2>Detalhes</h2>
-                <div id="detalhes"></div>
+                <div id="detalhes"><div id="parentDiv"></div></div>
                 <!--
                 <table>
                     <thead>
@@ -154,8 +178,9 @@
 
                     <tbody></tbody>
                 </table>
+
+                <a href="#" onclick="carregarDetalhesTodos()">Mostrar Todos</a>
                 -->
-                <a href="#">Mostrar Todos</a>
             </div>
         </main>
 

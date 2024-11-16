@@ -27,33 +27,54 @@ function fetchData() {
 
             // Extraindo e ordenando os IDs
             const keys = Object.keys(data).sort((a, b) => {
+                // Extrair o número do ID e comparar
                 const numA = parseInt(a.replace('ID', ''));
                 const numB = parseInt(b.replace('ID', ''));
-                return numA - numB;
+                return numA - numB; // Ordenação numérica
             });
 
             // Itera sobre cada nó filho
             keys.forEach((key) => {
                 const childData = data[key];
-
+            
+                // Exibe o ID do nó principal
+                // // outputHtml += `<h3>Nó principal ID: ${key}</h3>`;
+            
+                // Verifica se o nó principal possui subnós
                 if (typeof childData === 'object') {
                     Object.keys(childData).forEach((subKey) => {
                         const subNodeData = childData[subKey];
-
+            
+                        // Verifica se o subnó é uma string JSON válida e faz o parse
                         try {
                             const parsedData = JSON.parse(subNodeData);
+                            // Exibe o conteúdo de parsedData no console para verificação
                             console.log(`Conteúdo de parsedData do subnó ${subKey}:`, parsedData);
-
+                            
+                            // Verifica se os dados possuem os campos esperados
                             if (parsedData.dados) {
                                 const [pressao, lux, temperatura, umidade] = parsedData.dados.split(",");
                                 const timestamp = parsedData.timestamp || "Sem timestamp";
-
+                                
                                 // Adiciona os valores aos arrays correspondentes
                                 pressoes.push(parseFloat(pressao));
                                 luxs.push(parseFloat(lux));
                                 temperaturas.push(parseFloat(temperatura));
                                 umidades.push(parseFloat(umidade));
                                 timestamps.push(timestamp);
+
+                                // Exibe os dados no HTML
+                                // // outputHtml += `
+                                // //     <div>
+                                // //         <h4>Subnó ID: ${subKey}</h4>
+                                // //         <p>Temperatura: ${temperatura}</p>
+                                // //         <p>Umidade: ${umidade}</p>
+                                // //         <p>Pressão: ${pressao}</p>
+                                // //         <p>Luz: ${lux}</p>
+                                // //         <p>Timestamp: ${timestamp}</p>
+                                // //     </div>
+                                // //     <hr>
+                                // // `;
                             } else {
                                 console.log(`Subnó ${subKey} não possui o campo "dados".`, parsedData);
                             }
@@ -65,25 +86,9 @@ function fetchData() {
                     console.log(`Nó ${key} não possui subnós no formato esperado. Conteúdo do nó:`, childData);
                 }
             });
-
-            // Combina os arrays em um único array de objetos para ordenação
-            const combinedData = timestamps.map((timestamp, index) => ({
-                timestamp,
-                temperatura: temperaturas[index],
-                umidade: umidades[index],
-                pressao: pressoes[index],
-                lux: luxs[index]
-            }));
-
-            // Ordena os dados com base no timestamp (convertido para número de milissegundos)
-            combinedData.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
-
-            // Separa novamente os dados nos arrays originais
-            timestamps = combinedData.map(data => data.timestamp);
-            temperaturas = combinedData.map(data => data.temperatura);
-            umidades = combinedData.map(data => data.umidade);
-            pressoes = combinedData.map(data => data.pressao);
-            luxs = combinedData.map(data => data.lux);
+            
+            // Exibe o conteúdo na página
+            document.getElementById("data-output").innerHTML = outputHtml;
 
             // Exibe o conteúdo no Console
             console.log("Temperaturas:", temperaturas);
@@ -91,9 +96,6 @@ function fetchData() {
             console.log("Pressões:", pressoes);
             console.log("Lux:", luxs);
             console.log("Timestamps:", timestamps);
-
-            // Exibe o conteúdo na página
-            document.getElementById("data-output").innerHTML = outputHtml;
         } else {
             console.log("Nenhum dado encontrado.");
             document.getElementById("data-output").innerHTML = "<p>Nenhum dado encontrado.</p>";

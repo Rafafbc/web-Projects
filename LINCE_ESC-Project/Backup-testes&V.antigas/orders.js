@@ -18,3 +18,5 @@ const Orders = [
         status: 'Active'
     },
 ]
+
+export { Orders };

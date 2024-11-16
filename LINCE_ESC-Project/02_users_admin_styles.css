@@ -486,7 +486,7 @@ main .new-users .user-list .user .btn-detalhes_usuario:active {
     left: 5px;
 }
 
-/* Estilização da Tabela de Pedidos Recentes */
+/* Estilização da Tabela de Detalhes de Usuário */
 main .users-details {
     margin-top: 20.8px;
 }
@@ -495,19 +495,19 @@ main .users-details h2 {
     margin-bottom: 12.8px;
 }
 
-main .users-details #detalhes {
+main .users-details table {
     background-color: var(--color-background2);
     width: 100%;
     padding: var(--card-padding);
     text-align: center;
     box-shadow: var(--box-shadow);
-    border-radius: var(--card-border-radius);
     transition: all 0.3s ease;
 }
 main .users-details table:hover {
     box-shadow: none;
 }
 
+/*
 main table th {
     display: none;
 }
@@ -517,6 +517,53 @@ main table tbody td{
     height: 44.8px;
     border-bottom: 1px solid var(--info);
     color: var(--color-info);
+}
+*/
+
+.users-details #detalhes > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 16% 84%;
+}
+
+.users-details #detalhes div img {
+    padding: 0px;
+    margin: 0px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-bottom: 0.5px;
+}
+
+.users-details #detalhes table {
+    border-collapse: collapse;
+    width: 100%;
+    border-right: 1px solid var(--color-info);
+    border-left: 1px solid var(--color-info);
+    border-top: 2px solid var(--color-info);
+    border-bottom: 2px solid var(--color-info);
+}
+/* Fundo para linhas ímpares */
+.users-details #detalhes tr:nth-child(odd) {
+    background-color: var(--color-background);
+}
+/* Fundo para linhas pares */
+.users-details #detalhes tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.users-details #detalhes td:first-child{
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    width: 50%;
+}
+.users-details #detalhes td:last-child{
+    text-align: left;
+    vertical-align: middle;
+    width: 50%;
 }
 
 main table tbody tr:last-child td {

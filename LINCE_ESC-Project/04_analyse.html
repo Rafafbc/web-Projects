@@ -234,8 +234,12 @@
             <!-- Novos Usuários -->
             <div class="new-users">
             <h2>Gráfico</h2>
+            <div>
+                <label for="data-quantity">Quantidade de Dados:</label>
+                <input type="number" id="data-quantity" value="100" min="1" max="1000">
+            </div>
             <div class="user-list">
-                <canvas id="my-Chart" width="400" height="200"></canvas>
+                <canvas id="my-Chart"></canvas>
             </div>
             </div>
             
@@ -243,16 +247,7 @@
             <div class="recent-orders">
                 <h2>Últimos alertas de anomalia</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Nome do Curso</th>
-                            <th>Número do Curso</th>
-                            <th>Pagamento</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
+                    <thead></thead>
                     <tbody></tbody>
                 </table>
                 <a href="#">Mostrar Todos</a>

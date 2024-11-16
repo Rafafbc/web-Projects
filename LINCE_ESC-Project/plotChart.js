@@ -1,61 +1,46 @@
-// import { getDataArrays } from "./fetchData.js";
-// import { Chart } from 'chart.js/auto';
+let myChart = null; // Variável global para armazenar a instância do gráfico
 
-function teste1() {
-    console.log("testando 1 ...")
+// Função para filtrar os dados conforme a quantidade selecionada
+function filterDataByQuantity(data, quantity) {
+    return {
+        timestamps: data.timestamps.slice(0, quantity),
+        temperaturas: data.temperaturas.slice(0, quantity),
+        umidades: data.umidades.slice(0, quantity),
+        pressoes: data.pressoes.slice(0, quantity),
+        luxs: data.luxs.slice(0, quantity)
+    };
 }
 
 // Função para plotar o gráfico
-function plotChart() {
-    //const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = getDataArrays();
-    //const { temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps } = DataArrays;
+function plotChart(quantity = 100) {
     console.log("plotChart!!!!!");
 
+    // Recupera os dados completos
     const data = getDataArrays();
-    console.log(data)
+    console.log(data);
 
-    const temperaturaDado = data.temperaturas;
-    const umidadeDado = data.umidades;
-    const pressaoDado = data.pressoes;
-    const luxDado = data.luxs;
-    const timestamps = data.timestamps;
-
-    console.log(temperaturaDado);
-    console.log(umidadeDado);
-    console.log(pressaoDado);
-    console.log(luxDado);
-    console.log(timestamps);
+    // Filtra os dados com base na quantidade selecionada
+    const filteredData = filterDataByQuantity(data, quantity);
+    console.log(filteredData);
 
     const ctx = document.querySelector('#my-Chart');
-    
-    new Chart(ctx, {
+
+    // Verifica se já existe um gráfico. Se sim, destrói o gráfico anterior.
+    if (myChart !== null) {
+        myChart.destroy();
+    }
+
+    // Cria o gráfico
+    myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: timestamps,
+            labels: filteredData.timestamps,
             datasets: [
                 {
-                    label: 'Temperatura',
-                    data: temperaturaDado,
-                    borderColor: 'rgb(210, 72, 72, 1)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                },
-                {
                     label: 'Umidade',
-                    data: umidadeDado,
+                    data: filteredData.umidades,
                     borderColor: 'rgb(34, 116, 156, 1)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                },
-                {
-                    label: 'Pressão',
-                    data: pressaoDado,
-                    borderColor: 'rgb(78, 212, 78, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                },
-                {
-                    label: 'Luz',
-                    data: luxDado,
-                    borderColor: 'rgb(210, 210, 0, 1)',
-                    backgroundColor: 'rgb(210, 210, 0, 0.2)',
                 }
             ]
         },
@@ -79,38 +64,28 @@ function plotChart() {
     });
 }
 
-// document.addEventListener("DOMContentLoaded", plotChart);
+// Função para lidar com a seleção da quantidade de dados
+function handleDataQuantitySelection() {
+    const quantityInput = document.getElementById('data-quantity'); // Seletor de quantidade de dados
+
+    const quantity = parseInt(quantityInput.value);
+
+    // Chama a função de plotagem passando a quantidade de dados selecionada
+    plotChart(quantity);
+}
+
+// Exemplo de como integrar com a interface de usuário (HTML)
 document.addEventListener("DOMContentLoaded", () => {
     fetchData()
         .then(() => {
             getDataArrays();
+            plotChart(100); // Exibe os primeiros 100 dados por padrão
         });
+
+    // Adiciona um ouvinte para o evento de mudança no campo de quantidade de dados
+    document.getElementById('data-quantity').addEventListener('change', handleDataQuantitySelection);
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     fetchData()
-//         .then(() => {
-//             const data = getDataArrays();
-//             console.log("Dados para o gráfico:", data);  // Verifique os dados
-//             const temperaturaDado = data.temperaturas;
-//             const umidadeDado = data.umidades;
-//             const pressaoDado = data.pressoes;
-//             const luxDado = data.luxs;
-//             const timestamps = data.timestamps;
-
-//             //plotChart(temperaturaDado, umidadeDado, pressaoDado, luxDado, timestamps);
-//         })
-//         .catch((error) => {
-//             console.error("Ocorreu um erro:", error);
-//         });
-// });
-
-function teste2() {
-    console.log("testando 2 ...")
-}
-
-// Expondo a função "fetchData" ao escopo global
+// Expondo a função "plotChart" ao escopo global
 window.plotChart = plotChart;
-window.teste1 = teste1;
-window.teste2 = teste2;
-//window.myChart = myChart;
+window.handleDataQuantitySelection = handleDataQuantitySelection;

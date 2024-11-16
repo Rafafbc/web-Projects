@@ -486,16 +486,19 @@ main .recent-orders table:hover {
     box-shadow: none;
 }
 
+/*
 main table th {
     display: none;
 }
-
+*/
+/*
 main table tbody td{
     display: none;
     height: 44.8px;
     border-bottom: 1px solid var(--info);
     color: var(--color-info);
 }
+*/
 
 main table tbody tr:last-child td {
     border: none;
