@@ -52,7 +52,7 @@ function plotChart() {
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 },
                 {
-                    label: 'Luz',
+                    label: 'Lux',
                     data: luxDado,
                     borderColor: 'rgb(210, 210, 0, 1)',
                     backgroundColor: 'rgb(210, 210, 0, 0.2)',

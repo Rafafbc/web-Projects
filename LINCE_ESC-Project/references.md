@@ -8,7 +8,10 @@
 # Fontes Auxiliares
 - **Toggle Class:** <https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp>
 - **How To Create a Toggle Switch:** <https://www.w3schools.com/howto/howto_css_switch.asp>
-- **:** <>
-- **:** <>
-- **:** <>
-- **:** <>
+
+# Firebase
+- **LINCE-ESC-database (Firebase Project):** <https://console.firebase.google.com/u/0/project/lince-esc-database/overview?hl=pt-br>
+- **Documentação**
+  - **Firebase Realtime Database:** <https://firebase.google.com/docs/database?hl=pt-br>
+    - **Instalação e Configuração no JavaScript:** <https://firebase.google.com/docs/database/web/start?hl=pt-br>
+  - **Firebase Authentication:** <https://firebase.google.com/docs/auth?hl=pt-br>
