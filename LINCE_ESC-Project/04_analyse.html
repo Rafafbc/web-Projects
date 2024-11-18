@@ -118,7 +118,7 @@
                         <div class="info">
                             <h3>Pressão do ar</h3>
                             <!--<h1>$65,240</h1>-->
-                            <button class="analyse_btn" onclick="plotPressChart()">
+                            <button class="analyse_btn" id="press-btn" onclick="plotPressChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -146,7 +146,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Temperatura</h3>
-                            <button class="analyse_btn">
+                            <button class="analyse_btn" id="temp-btn" onclick="plotTempChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -174,7 +174,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Umidade</h3>
-                            <button class="analyse_btn">
+                            <button class="analyse_btn" id="humid-btn" onclick="plotHumidChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -204,7 +204,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Intensidade Luminosa</h3>
-                            <button class="analyse_btn" onclick="plotLuxChart()">
+                            <button class="analyse_btn" id="lux-btn" onclick="plotLuxChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -235,7 +235,7 @@
             <div class="data-section">
             <h2>Gráfico</h2>
             <div>
-                <label for="data-quantity">Quantidade de Dados:</label>
+                <label>Quantidade de Dados:</label>
                 <input type="number" id="data-quantity" value="100" min="1" max="1000">
             </div>
             <div class="data-infos">
