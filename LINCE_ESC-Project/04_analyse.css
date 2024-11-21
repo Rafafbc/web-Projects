@@ -278,9 +278,12 @@ main {
 
 /* Estilização das Análises */
 main .analyse {
-    display: grid;
+    display: none;      /*Retornar para 'grid' depois*/
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+}
+main .data-section{
+    display: none;
 }
 /*
 @media (max-width: 1200px) {
@@ -666,7 +669,7 @@ main .recent-orders a {
 
 .right-section .reminders .notification .icon {
     padding: 9.6px;
-    color: var(--color-background2);
+    color: var(--color-text);
     background-color: var(--color-success);
     border-radius: 20%;
     display: flex;
