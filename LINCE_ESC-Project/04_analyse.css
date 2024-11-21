@@ -462,6 +462,25 @@ main .recent-orders h2 {
     margin-bottom: 12.8px;
 }
 
+main .recent-orders .data-infos {
+    background-color: var(--color-background2);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 16px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 22.4px;
+}
+main .recent-orders .data-infos:hover {
+    box-shadow: none;
+}
+
+/*
 main .recent-orders table {
     background-color: var(--color-background2);
     width: 100%;
@@ -474,6 +493,7 @@ main .recent-orders table {
 main .recent-orders table:hover {
     box-shadow: none;
 }
+*/
 
 /*
 main table th {
@@ -565,9 +585,10 @@ main .recent-orders a {
     justify-content: center;
     text-align: center;
     margin-top: 16px;
-    background-color: var(--color-background2);
+    background-color: var(--color-info);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
+    border: 5px solid var(--color-background2);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -580,6 +601,10 @@ main .recent-orders a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+}
+.right-section .user-profile .logo p {
+    color: var(--color-background2);
 }
 
 .right-section .user-profile img {

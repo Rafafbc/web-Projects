@@ -233,24 +233,36 @@
 
             <!-- Exibição de Dados -->
             <div class="data-section">
-            <h2>Gráfico</h2>
-            <div>
-                <label>Quantidade de Dados:</label>
-                <input type="number" id="data-quantity" value="100" min="1" max="1000">
-            </div>
-            <div class="data-infos">
-                <div id="data-info_1"></div>
-            </div>
+                <h2>Gráfico</h2>
+                <div>
+                    <!-- Campo de seleção de quantidade de dados -->
+                    <label>Quantidade de Dados:</label>
+                    <input type="number" id="data-quantity" value="100" min="1" max="1000">
+                </div>
+
+                <div class="data-infos">
+                    <div id="data-info_1"></div>
+                </div>
             </div>
             
             <!-- Tabela de Pedidos Recentes -->
             <div class="recent-orders">
-                <h2>Últimos alertas de anomalia</h2>
-                <table>
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
+                <h2>Dados históricos com alertas de anomalias</h2>
+                <div>
+                    <!-- Campo de seleção de quantidade de dados -->
+                    <label>Quantidade de Dados:</label>
+                    <input type="number" id="data-quantity2" value="100" />
+                </div>
+
+                <!-- Botão para gerar o gráfico com todos os dados -->
+                <button id="all-data-btn" onclick="plotAllCharts()">Exibir Gráfico Completo</button>
+
+                <div class="data-infos">
+                    <div id="data-info_2"></div>
+                </div>
+                <!--
                 <a href="#">Mostrar Todos</a>
+                -->
             </div>
         </main>
 
@@ -274,8 +286,8 @@
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Reza</b></p>
-                        <small class="text-muted">Admin</small>
+                        <p>Olá, <b>Rafael</b></p>
+                        <p style="font-size: 15px;" class="text-muted">Admin</p>
                     </div>
                     <div class="profile-photo">
                         <img src="images/Rafael.png">
@@ -285,9 +297,12 @@
 
             <div class="user-profile">
                 <div class="logo">
-                    <img src="images/lince-logo_S-fundo.png">
+                    <img src="images/RAINCAT_SEMFUNDO.png">
+                    <p style="font-size: 18px;">A system to avoid getting wet!</p>
+                    <!--
                     <h2>LINCE</h2>
                     <p>Liga De Inteligência Neuro-Computacional Na Engenharia</p>
+                    -->
                 </div>
             </div>
 
@@ -355,10 +370,14 @@
 
     <!-- Link do Chart.js usando um CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plugin "Annotation" para Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.0"></script>
 
     <!-- Arquivos JavaScript para coleta de dados -->
     <script type="module" src="firebase.js"></script>
     <script type="module" src="fetchData.js"></script>
     <script type="module" src="plotChart.js"></script>
+    <script type="module" src="fetchData_anomalous.js"></script>
+    <script type="module" src="plotChart_anomalous.js"></script>
 </body>
 </html>
