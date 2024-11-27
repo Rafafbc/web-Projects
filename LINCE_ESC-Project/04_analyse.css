@@ -884,6 +884,7 @@ main .recent-orders a {
     }
 
     /* Estilização da Exibição de Dados */
+    /*
     main .data-section {
         margin-top: 20.8px;
     }
@@ -907,18 +908,17 @@ main .recent-orders a {
     }
 
     main .data-section #data-info_1{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner */
-        max-width: 100%; /* Evita que ultrapassem os limites */
+        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
+        max-width: 100%; /* Evita que ultrapassem os limites 
         max-height: 100%;
     }
 
     main .recent-orders #data-info_2{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner */
-        max-width: 100%; /* Evita que ultrapassem os limites */
+        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
+        max-width: 100%; /* Evita que ultrapassem os limites 
         max-height: 100%;
     }
-    
-    
+    */
 
     main .recent-orders {
         position: relative;
