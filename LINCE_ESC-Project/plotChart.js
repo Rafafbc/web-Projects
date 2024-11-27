@@ -70,7 +70,7 @@ function plotPressChart(quantity = 100) {
             plugins: {
                 title: {
                     display: true, // Habilita o título
-                    text: 'Série temporal dos dados', // Texto do título
+                    text: 'Série temporal dos dados de Pressão atmosférica', // Texto do título
                     font: {
                         size: 18, // Tamanho da fonte do título
                         weight: 'bold' // Peso da fonte
@@ -166,7 +166,7 @@ function plotTempChart(quantity = 100) {
             plugins: {
                 title: {
                     display: true, // Habilita o título
-                    text: 'Série temporal dos dados', // Texto do título
+                    text: 'Série temporal dos dados de Temperatura do ar', // Texto do título
                     font: {
                         size: 18, // Tamanho da fonte do título
                         weight: 'bold' // Peso da fonte
@@ -262,7 +262,7 @@ function plotHumidChart(quantity = 100) {
             plugins: {
                 title: {
                     display: true, // Habilita o título
-                    text: 'Série temporal dos dados', // Texto do título
+                    text: 'Série temporal dos dados de Umidade relativa do ar', // Texto do título
                     font: {
                         size: 18, // Tamanho da fonte do título
                         weight: 'bold' // Peso da fonte
@@ -358,7 +358,7 @@ function plotLuxChart(quantity = 100) {
             plugins: {
                 title: {
                     display: true, // Habilita o título
-                    text: 'Série temporal dos dados', // Texto do título
+                    text: 'Série temporal dos dados de Radiação luminosa', // Texto do título
                     font: {
                         size: 18, // Tamanho da fonte do título
                         weight: 'bold' // Peso da fonte

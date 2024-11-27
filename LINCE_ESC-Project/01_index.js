@@ -28,12 +28,21 @@ closeBtn.addEventListener('click', () => {
 // Quando clicado, alterna a classe 'dark-mode-variables' no corpo do documento,
 // permitindo alternar entre temas claro e escuro.
 darkMode.addEventListener('click', () => {
+    // Alterna a classe do corpo para ativar o modo escuro.
     document.body.classList.toggle('dark-mode-variables');
     
     // Alterna a classe 'active' nos elementos filhos específicos do darkMode.
     // Isso permite alterar a aparência dos ícones ou indicadores de modo escuro e claro.
     darkMode.querySelector('span:nth-child(1)').classList.toggle('active');
     darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
+
+    // Altera a source da imagem.
+    const logo = document.getElementById('LINCE-name');
+    if (document.body.classList.contains('dark-mode-variables')) {
+        logo.src = 'images/LINCE-blackMode-S_ICTS.png'; // Caminho da imagem para o modo escuro
+    } else {
+        logo.src = 'images/LINCE-whiteMode-S_ICTS.png'; // Caminho da imagem para o modo claro
+    }
 
     // // Acessa os valores das variáveis do CSS no arquivo .js
     // const rootStyles = getComputedStyle(document.documentElement);

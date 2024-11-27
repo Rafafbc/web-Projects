@@ -149,14 +149,19 @@ aside .toggle h2 {
 
 aside .toggle .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     display: flex;
     gap: 8px;
 }
 
-aside .toggle .logo img {
-    width: 74px;
-    height: 74px;
+aside .toggle .logo #LINCE-logo {
+    width: 80%;
+    height: 80%;
+}
+aside .toggle .logo #LINCE-name {
+    width: 95%;
+    height: 95%;
 }
 
 aside .toggle .close {
@@ -673,6 +678,7 @@ main .recent-orders a {
     filter:drop-shadow(12px 12px 8px var(--color-highlight))
     /* border-radius: 50%; */
 }
+
 
 .right-section .user-profile h2 {
     margin-bottom: 0px;
