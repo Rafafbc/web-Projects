@@ -27,7 +27,7 @@ function plotPressChart(quantity = 100) {
     // Cria um novo elemento <canvas> para exibir o gráfico
     const plotedChart = document.createElement("canvas");
     plotedChart.id = 'my-Chart';
-    plotedChart.width = 800;  // Largura
+    plotedChart.width = 900;  // Largura
     plotedChart.height = 400; // Altura
     infoData1.appendChild(plotedChart);
 

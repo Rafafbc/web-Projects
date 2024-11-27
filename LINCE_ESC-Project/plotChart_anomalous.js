@@ -18,15 +18,15 @@ function plotAllCharts(quantity = 100) {
     const infoData2 = document.getElementById("data-info_2");
 
     // Remove o canvas existente se já estiver presente
-    const existingCanvas = document.getElementById('my-Chart');
+    const existingCanvas = document.getElementById('my-Chart2');
     if (existingCanvas) {
         existingCanvas.remove();
     }
 
     // Cria um novo elemento <canvas> para exibir o gráfico
     const plotedChart = document.createElement("canvas");
-    plotedChart.id = 'my-Chart';
-    plotedChart.width = 800;  // Largura
+    plotedChart.id = 'my-Chart2';
+    plotedChart.width = 900;  // Largura
     plotedChart.height = 400; // Altura
     infoData2.appendChild(plotedChart);
 
