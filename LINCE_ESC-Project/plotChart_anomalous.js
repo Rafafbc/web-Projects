@@ -33,7 +33,7 @@ function plotAllCharts(quantity = 100) {
     console.log("plotChart - Gráfico de múltiplos dados");
 
     // Recupera os dados completos
-    const data = getDataArrays();
+    const data = getAnomalousDataArrays();
     console.log("Dados totais: ", data);
 
     // Filtra os dados com base na quantidade selecionada
@@ -88,9 +88,9 @@ function plotAllCharts(quantity = 100) {
                     data: filteredData.timestamps.map((timestamp, index) => {
                         return filteredData.anomalias[index] === 1 ? filteredData.pressoes[index] : null; // Ponto visível nas anomalias
                     }),
-                    borderColor: 'red',
-                    backgroundColor: 'red',
-                    borderWidth: 2,
+                    borderColor: 'rgb(148, 50, 188, 1)',
+                    backgroundColor: 'rgb(148, 50, 188, 0.2)',
+                    borderWidth: 1,
                     pointRadius: 5, // Tamanho dos pontos da anomalia
                     fill: false,
                     hidden: false, // Inicialmente visível na legenda
@@ -158,7 +158,7 @@ function plotAllCharts(quantity = 100) {
                     mode: 'vertical',
                     scaleID: 'x',
                     value: filteredData.timestamps[index], // A posição no eixo X onde a anomalia ocorre
-                    borderColor: 'red',
+                    borderColor: 'rgb(148, 50, 188)',
                     borderWidth: 2,
                     label: {
                         content: 'Anomalia',
@@ -180,7 +180,7 @@ function plotAllCharts(quantity = 100) {
 }
 
 // Função para lidar com a seleção da quantidade de dados
-function handleDataQuantitySelection() {
+function handleAnomalousDataQuantitySelection() {
     const quantityInput = document.getElementById('data-quantity2'); // Seletor de quantidade de dados
 
     const quantity = parseInt(quantityInput.value);
@@ -194,15 +194,16 @@ function handleDataQuantitySelection() {
 
 // Exemplo de como integrar com a interface de usuário (HTML)
 document.addEventListener("DOMContentLoaded", () => {
-    fetchData()
+    fetchAnomalousData()
         .then(() => {
-            getDataArrays();
+            getAnomalousDataArrays();
         });
 
     // Adiciona um ouvinte para o evento de mudança no campo de quantidade de dados
-    document.getElementById('data-quantity2').addEventListener('change', handleDataQuantitySelection);
+    document.getElementById('data-quantity2').addEventListener('change', handleAnomalousDataQuantitySelection);
 });
 
 // Expondo a função "plotAllCharts" ao escopo global
 window.plotAllCharts = plotAllCharts;
-window.handleDataQuantitySelection = handleDataQuantitySelection;
+
+window.handleAnomalousDataQuantitySelection = handleAnomalousDataQuantitySelection;

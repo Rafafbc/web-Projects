@@ -10,7 +10,7 @@ var anomalias = [];
 var timestamps = [];
 
 // Função para buscar e exibir dados do Realtime Database
-function fetchData() {
+function fetchAnomalousData() {
     const dataRef = ref(database, "dados_anomalos_teste");  // Refere-se à chave "dados_meteorologicos"
 
     // Retorna uma Promise para garantir que os dados foram carregados
@@ -84,8 +84,8 @@ function fetchData() {
 }
 
 // Função para obter os dados
-function getDataArrays() {
-    console.log("DADOS COLETADOS para anomalia!");
+function getAnomalousDataArrays() {
+    console.log("DADOS COLETADOS P/ ANOMALIA!");
     return {
         pressoes,
         radiacoes,
@@ -96,6 +96,6 @@ function getDataArrays() {
     };
 }
 
-// Expondo as funções "fetchData" e "getDataArrays" ao escopo global
-window.fetchData = fetchData;
-window.getDataArrays = getDataArrays;
+// Expondo as funções "fetchAnomalousData" e "getAnomalousDataArrays" ao escopo global
+window.fetchAnomalousData = fetchAnomalousData;
+window.getAnomalousDataArrays = getAnomalousDataArrays;

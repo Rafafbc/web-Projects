@@ -442,4 +442,5 @@ window.plotPressChart = plotPressChart;
 window.plotTempChart = plotTempChart;
 window.plotHumidChart = plotHumidChart;
 window.plotLuxChart = plotLuxChart;
+
 window.handleDataQuantitySelection = handleDataQuantitySelection;
