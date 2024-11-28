@@ -149,14 +149,19 @@ aside .toggle h2 {
 
 aside .toggle .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     display: flex;
     gap: 8px;
 }
 
-aside .toggle .logo img {
-    width: 74px;
-    height: 74px;
+aside .toggle .logo #LINCE-logo {
+    width: 80%;
+    height: 80%;
+}
+aside .toggle .logo #LINCE-name {
+    width: 95%;
+    height: 95%;
 }
 
 aside .toggle .close {
@@ -278,7 +283,7 @@ main {
 
 /* Estilização das Análises */
 main .analyse {
-    display: grid;
+    display: none;  /*retornar para "grid" depois*/
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
@@ -428,10 +433,28 @@ main .new-users {
     margin-top: 20.8px;
 }
 
+main .LINCE-info {
+    background-color: var(--color-background2);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius1);
+    margin-top: 16px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 22.4px;
+}
+main .LINCE-info:hover {
+    box-shadow: none;
+}
+
 main .new-users .user-list {
     background-color: var(--color-background2);
     padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
+    border-radius: var(--border-radius1);
     margin-top: 16px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
@@ -576,9 +599,10 @@ main .recent-orders a {
     justify-content: center;
     text-align: center;
     margin-top: 16px;
-    background-color: var(--color-background2);
+    background-color: var(--color-info);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
+    border: 5px solid var(--color-background2);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -591,6 +615,10 @@ main .recent-orders a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+}
+.right-section .user-profile .logo p {
+    color: var(--color-background2);
 }
 
 .right-section .user-profile img {

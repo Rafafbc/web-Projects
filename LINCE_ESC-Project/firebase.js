@@ -28,9 +28,10 @@ onValue(connectedRef, (snapshot) => {
     const connected = snapshot.val();
     if (connected) {
         console.log("Conectado ao Realtime Database com sucesso!");
-        //alert("Conexão estabelecida com o Realtime Database!");
+        alert("Conexão estabelecida com o Realtime Database!");
     } else {
         console.log("Desconectado do Realtime Database.");
+        //alert("Conexão com o Realtime Database perdida!!");
     }
 });
 

@@ -34,11 +34,11 @@ function plotAllCharts(quantity = 100) {
 
     // Recupera os dados completos
     const data = getAnomalousDataArrays();
-    console.log("Dados totais: ", data);
+    console.log("Dados totais para anomalia: ", data);
 
     // Filtra os dados com base na quantidade selecionada
     const filteredData = filterDataByQuantity(data, quantity);
-    console.log("Dados filtrados: ", filteredData);
+    console.log("Dados filtrados para anomalia: ", filteredData);
 
     // Define o contexto 2D do novo canvas
     const ctx = plotedChart.getContext('2d');

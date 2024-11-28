@@ -11,7 +11,7 @@ var timestamps = [];
 
 // Função para buscar e exibir dados do Realtime Database
 function fetchAnomalousData() {
-    const dataRef = ref(database, "dados_anomalos_teste");  // Refere-se à chave "dados_meteorologicos"
+    const dataRef = ref(database, "dados_anomalos_teste");  // Refere-se à chave "dados_anomalos_teste"
 
     // Retorna uma Promise para garantir que os dados foram carregados
     return get(dataRef).then((snapshot) => {
